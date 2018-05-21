@@ -25,7 +25,8 @@
       <br>
       <strong>{{pro.proveedor}}</strong>
     </p>
-    <button ion-button block ionic-left>
+    <button ion-button block ionic-left
+     (click)="carritoPr.agregar_carrito(pro)">
       <ion-icon name="cart"></ion-icon> 
        Agregar Carrito
 

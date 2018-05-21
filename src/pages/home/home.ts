@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ProductosProvider } from '../../providers/productos';
 
 import { ProductoPage } from "../producto/producto";
+import { CarritoProvider,UsuarioProvider } from "../../providers/index.services";
 
 
 @Component({
@@ -14,7 +15,9 @@ export class HomePage {
   productoPage=ProductoPage;
   
   constructor(public navCtrl: NavController,
-              private _proVer : ProductosProvider) {
+              private _proVer : ProductosProvider,
+              private _cs: CarritoProvider,
+              private _us:UsuarioProvider ) {
   }
 
   siguientePagina( infiniteScroll ) {

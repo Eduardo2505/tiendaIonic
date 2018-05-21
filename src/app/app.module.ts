@@ -6,6 +6,8 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { HttpModule } from "@angular/http";
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
+import { IonicStorageModule } from '@ionic/storage';
+
 
 import {
   ProductosProvider,
@@ -39,12 +41,14 @@ import { ImagenPipe } from "../pipes/imagen/imagen";
     ProductoPage,
     TabsPage
   ],
-  imports: [BrowserModule, HttpModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule,
+            HttpModule,
+            IonicStorageModule.forRoot(),
+            IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ProductoPage,
     CarritoPage,
     CategoriasPage,
     LoginPage,
