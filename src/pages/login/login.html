@@ -1,9 +1,81 @@
+<ion-content padding>
+
+  <div id="logo" padding text-center>
+    <img src="./assets/imgs/logo.png">
+  </div>
+
+  <div padding>
+    <ion-segment [(ngModel)]="opt" color="light">
+      <ion-segment-button value="signin">
+        Sign In
+      </ion-segment-button>
+      <ion-segment-button value="signup">
+        Sign Up
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form *ngSwitchCase="'signin'">
+
+      <ion-input type="email" ></ion-input>
+
+
+
+      <ion-input type="password"></ion-input> 
+
+
+        <div padding text-center>
+          <button ion-button round  (click)="ingresar()"
+           [disabled]="correo.length < 5 || password < 5" color="light" icon-right>
+            Entrar <ion-icon name="log-in"></ion-icon>
+          </button>
+        </div>
+
+
+    </form>
+
+    <form  *ngSwitchCase="'signup'">
+      <ion-label>Username</ion-label>
+          <ion-input type="text" ></ion-input>
+
+
+      <ion-label float>Fullname</ion-label>
+          <ion-input type="text"></ion-input>
+
+
+
+          <ion-label float>Email</ion-label>
+          <ion-input type="email" ></ion-input>
+
+
+          <ion-label float>Password</ion-label>
+          <ion-input type="password" ></ion-input>
+
+
+
+          <ion-label float>Retry Password</ion-label>
+          <ion-input type="password" ></ion-input>
+
+
+        <div padding text-center>
+          <button ion-button round color="light" icon-right>
+            SIGNUP <ion-icon name="person-add"></ion-icon>
+          </button>
+        </div>
+
+
+    </form>
+
+  </div>
+</ion-content>
+
 <!--
   Generated template for the LoginPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
+
 <ion-header>
 <ion-buttons>
   <button ion-button (click)="viewCtrl.dismiss(false);">
@@ -36,4 +108,4 @@
    [disabled]="correo.length < 5 || password < 5">
 Ingresar
   </button>
-</ion-content>
+</ion-content>-->

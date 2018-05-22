@@ -14,7 +14,10 @@ import { UsuarioProvider } from "../../providers/index.services";
 })
 export class LoginPage {
   correo: string = "";
-  password: string = "";
+  password: string = "";  
+  
+  loginErrorString: string;
+  opt: string = 'signin';
 
   constructor(
     public navCtrl: NavController,
